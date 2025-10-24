@@ -4,12 +4,12 @@ from urllib.parse import urlparse
 from pathlib import Path
 
 def get_image_filename(url):
-    """Extracts a filename from the image URL."""
+    
     parsed_url = urlparse(url)
     return os.path.basename(parsed_url.path) or "downloaded_image.jpg"
 
 def download_image(url, save_path):
-    """Attempts to download the image and save it to the specified path."""
+    
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()  # Raise an error for bad status codes
@@ -38,3 +38,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
